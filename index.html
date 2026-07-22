@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordly - Interactive Dictionary</title>
+</head>
+<body>
+    <div class="containor">
+        <header>
+            <h1>Wordly - Interactive Dictionary</h1>
+              <p>Search for words and discover their meanings</p>
+               <div class="search-section">
+            <form id="searchForm">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Enter a word..." 
+                    aria-label="Search for a word"
+                    required
+                >
+                <button type="submit">Search</button>
+            </form>
+            <div id="error" class="error-message"></div>
+        </div>
+
+        <div id="results" class="results-section"></div>
+    </div>
+     <script src="script.js"></script>
+        </header>
+    </div>
+</body>
+</html>

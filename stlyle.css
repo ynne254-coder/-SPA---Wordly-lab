@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.search-section {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.95em;
+    padding: 10px;
+    border-left: 4px solid #e74c3c;
+    background: #fadbd8;
+    border-radius: 4px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.results-section {
+    min-height: 200px;
+}
+
+.word-result {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.word-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+}
+
+.phonetic {
+    color: #667eea;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.audio-btn {
+    background: #667eea;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border-radius: 6px;
+}
+
+.audio-btn:hover {
+    background: #764ba2;
+}
+
+.audio-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.meaning {
+    margin-bottom: 25px;
+}
+
+.part-of-speech {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.definitions {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.definition-item {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.definition-item::before {
+    content: "▸ ";
+    color: #667eea;
+    font-weight: bold;
+}
+
+.example {
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 3px solid #667eea;
+}
+
+.synonyms {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.synonyms-label {
+    font-weight: 600;
+    color: #333;
+    display: inline;
+}
+
+.synonyms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.synonym-tag {
+    background: #f0f0f0;
+    color: #667eea;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.synonym-tag:hover {
+    background: #667eea;
+    color: white;
+}
+
+.source {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.source-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.source-link {
+    color: #667eea;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.source-link:hover {
+    text-decoration: underline;
+}
+
+.loading {
+    text-align: center;
+    color: #667eea;
+    font-size: 1.1em;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .word-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .audio-btn {
+        margin-top: 10px;
+    }
+}
